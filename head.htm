@@ -1,0 +1,37 @@
+<div class="header">
+	<div class="top">
+      <div class="title">
+            <a href="{dede:global.cfg_basehost/}"><img src="{dede:global.cfg_templets_skin/}/images/logo.gif" height="54" width="216" alt="{dede:global.cfg_webname/}"/></a>
+      </div>
+      <div class="banner1">{dede:myad name='innerTopBanner1'/}</div>
+      <div class="banner2">{dede:myad name='innerTopBanner2'/}</div>
+       
+	</div><!-- top -->
+	<!-- 菜单 -->
+	<div class="module">
+    <div id="navMenu">
+        <a href='{dede:global.cfg_cmsurl/}/'><span>主页</span></a>
+      	{dede:channel type='top' row='10' currentstyle="<a href='~typelink~' ~rel~><span>~typename~</span></a>"}
+      	<a href='[field:typeurl/]' [field:rel/]><span>[field:typename/]</span></a>
+      	{/dede:channel}
+    </div>	
+    <div class="search">
+        <div class="tags">
+            <span>热门栏目:</span>
+            {dede:tag row='10' getall='1' sort='month'}
+                <a href='[field:link/]'>[field:tag /]</a>
+            {/dede:tag}
+        </div>
+        <form  name="formsearch" action="{dede:global.cfg_cmsurl/}/plus/search.php">
+            <div class="form">
+            <input type="hidden" name="kwtype" value="0" />
+            <input name="q" type="text" class="search-keyword" id="search-keyword" value="在这里搜索..." onfocus="if(this.value=='在这里搜索...'){this.value='';}"  onblur="if(this.value==''){this.value='在这里搜索...';}" />
+            <select name="searchtype" class="search-option" id="search-option">
+                <option value="titlekeyword" selected='1'>智能模糊</option>
+            </select>
+            <button type="submit" class="search-submit">搜索</button>
+            </div>
+        </form>
+    </div><!-- //search -->
+	</div>
+</div><!-- //header -->
