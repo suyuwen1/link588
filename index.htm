@@ -13,6 +13,33 @@
 </head>
 <body>
     {dede:include filename="head.htm"/}
-    
+    <div id="main">
+        <div class="con">
+            <div class="conleft">
+                <div class="contitle">最近更新</div>
+                <div class="conlist">
+                    {dede:arclist row='14' titlelen='60' noflag='h'}
+                        <a href="[field:arcurl/]">[field:title/]</a>
+                    {/dede:arclist}
+                </div>
+            </div>
+            <div class="conleft">
+                <div class="contitle">最近更新</div>
+                <div class="conlist">
+                    {dede:arclist typeid='2,3,4,5' titlelen='60' row='15'}
+                    <a href="[field:arcurl /]">[field:title /]</a><span>[field:pubdate function="MyDate('m-d',@me)"/]</span>
+                    {/dede:arclist}
+                </div>
+            </div>
+            <div class="conleft">
+                <div class="contitle">最近更新</div>
+                <div class="conlist">
+                    {dede:arclist row=14 titlelen=32 noflag='h'}
+                        <a href="[field:arcurl/]">[field:title/]</a>
+                    {/dede:arclist}
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
