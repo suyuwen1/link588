@@ -150,3 +150,7 @@ input,select,button{
     font-size: 12px;
     line-height: 22px;
 }
+.contitle .more{
+    color: #10326b;
+    float: right;
+}
