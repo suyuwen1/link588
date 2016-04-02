@@ -1,0 +1,1 @@
+﻿select title,id,pubdate from dede_archives where typeid in(select id from dede_arctype where topid = 12) order by pubdate desc , senddate desc , id desc limit 16

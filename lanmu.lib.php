@@ -3,9 +3,10 @@ if(!defined('DEDEINC'))
 {
     exit("Request Error!");
 }
-require_once(DEDEINC.'/arc.partview.class.php');
+// require_once(DEDEINC.'/arc.partview.class.php');
 require_once(DEDEINC.'/taglib/mytag.lib.php');
-require_once(DEDEINC.'/taglib/arclist.lib.php');
+// require_once(DEDEINC.'/taglib/arclist.lib.php');
+require_once(DEDEINC.'/common.inc.php');
 function lib_lanmu(&$ctag,&$refObj)
 {
     global $dsql,$envs;
@@ -22,21 +23,36 @@ function lib_lanmu(&$ctag,&$refObj)
     $dsql->SetQuery("SELECT id,typename,typedir,isdefault,ispart,defaultname,namerule2,moresite,siteurl,sitepath 
                                             FROM dede_arctype WHERE $tpsql ORDER BY sortrank ASC");
     $dsql->Execute();
+    $typeids = array();
     while($row = $dsql->GetArray()) {
         $typeids[] = $row;
     }
     //$revalue =  var_dump($typeids);
     $n = 0;
     foreach($typeids as $key => $val){
-        if($typeids[$key]['id'] == 12 || $typeids[$key]['id'] == 20){
+        if($val['id'] == 12 || $val['id'] == 20){
             continue;
         }
         if(($key+1) % 3 == 0){
             $revalue .= '<div class="con">';
         }
         
-        $revalue .= '<div class="conleft"><div class="contitle">'.$typeids[$key]['typename'].'<a class="more" href="'.GetOneTypeUrlA($typeids[$key]).'">更多</a></div><div class="conlist">';
-        
+        $revalue .= '<div class="conleft"><div class="contitle">'.$val['typename'].'<a class="more" href="'.GetOneTypeUrlA($val).'">更多</a></div><div class="conlist">';
+        //var_dump($val['id']);
+        $dsql->SetQuery("select title,id,pubdate from dede_archives where typeid in(select id from dede_arctype where topid = ".$val['id'].") order by pubdate desc , senddate desc , id desc limit 16");
+        $dsql->Execute();
+        $typeids2 = array();
+        while($row2 = $dsql->GetArray()) {
+             $typeids2[] = $row2;
+        }
+        //var_dump($typeids2);
+        if (is_array($typeids2)) {
+            foreach ($typeids2 as $key2 => $val2) {
+                $oneurl = GetOneArchive($val2['id']);
+                $revalue .= '<span class="conlisttime">'.MyDate('m-d',$val2['pubdate']).'</span><a href="'.$oneurl['arcurl'].'">'.cn_substr($val2['title'],50).'</a>';
+                //var_dump(GetOneArchive($val2['id']));
+            }
+        }
         
         $revalue .= '</div></div>';
         
@@ -44,15 +60,21 @@ function lib_lanmu(&$ctag,&$refObj)
             $revalue .= '</div>';
             $n++;
             $tagname = 'indexLeftBanner'.$n;
+            //select * from dede_archives where typeid in(select id from dede_arctype where topid = 12) order by pubdate desc , senddate desc , id desc
             // $row = $dsql->GetOne(" SELECT * FROM dede_myad WHERE tagname LIKE '$tagname' ORDER BY typeid DESC ");
             // $revalue .= var_dump($row,$tagname);
             // if($row != '')(
             //     $revalue .= '<div style="margin-bottom:10px auto">'.$row['normbody'].'</div>';
             // )
+            
+            //$tpsql = " reid=0 AND ispart<>2 AND ishidden<>1 AND channeltype>0 ";
+            
+            
             $body = lib_GetMyTagT($refObj, $typeid, $tagname, '#@__myad');
             $revalue .= '<div style="margin-bottom:10px auto">'.$body.'</div>';
         }
     }
+    $dsql->Close();
     //------------------------------------------------------
     return $revalue;
 }
