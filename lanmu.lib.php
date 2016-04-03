@@ -24,22 +24,28 @@ function lib_lanmu(&$ctag,&$refObj)
                                             FROM dede_arctype WHERE $tpsql ORDER BY sortrank ASC");
     $dsql->Execute();
     $typeids = array();
+    $typeids[0] = 0;
     while($row = $dsql->GetArray()) {
         $typeids[] = $row;
     }
     //$revalue =  var_dump($typeids);
     $n = 0;
     foreach($typeids as $key => $val){
-        if($val['id'] == 12 || $val['id'] == 20){
-            continue;
+        // if($val['id'] == 12 || $val['id'] == 20){
+        //     continue;
+        // }
+        // if(($key+1) % 3 == 0){
+        //     $revalue .= '<div class="con">';
+        // }
+        if ($key == 0) {
+            $revalue .= '<div class="conleft"><div class="contitle">最近更新</div><div class="conlist">';
+            $sqltext = " SELECT * FROM dede_archives ORDER BY pubdate desc , senddate desc , id desc limit 16";
+        }else {
+            $revalue .= '<div class="conleft"><div class="contitle">'.$val['typename'].'<a class="more" href="'.GetOneTypeUrlA($val).'">更多</a></div><div class="conlist">';
+            $sqltext = "select title,id,pubdate from dede_archives where typeid in(select id from dede_arctype where topid = ".$val['id'].") order by pubdate desc , senddate desc , id desc limit 16";
         }
-        if(($key+1) % 3 == 0){
-            $revalue .= '<div class="con">';
-        }
-        
-        $revalue .= '<div class="conleft"><div class="contitle">'.$val['typename'].'<a class="more" href="'.GetOneTypeUrlA($val).'">更多</a></div><div class="conlist">';
         //var_dump($val['id']);
-        $dsql->SetQuery("select title,id,pubdate from dede_archives where typeid in(select id from dede_arctype where topid = ".$val['id'].") order by pubdate desc , senddate desc , id desc limit 16");
+        $dsql->SetQuery($sqltext);
         $dsql->Execute();
         $typeids2 = array();
         while($row2 = $dsql->GetArray()) {
@@ -56,8 +62,8 @@ function lib_lanmu(&$ctag,&$refObj)
         
         $revalue .= '</div></div>';
         
-        if(($key+2) % 3 == 0){
-            $revalue .= '</div>';
+        if(($key+1) % 3 == 0){
+            //$revalue .= '</div>';
             $n++;
             $tagname = 'indexLeftBanner'.$n;
             //select * from dede_archives where typeid in(select id from dede_arctype where topid = 12) order by pubdate desc , senddate desc , id desc
@@ -71,7 +77,7 @@ function lib_lanmu(&$ctag,&$refObj)
             
             
             $body = lib_GetMyTagT($refObj, $typeid, $tagname, '#@__myad');
-            $revalue .= '<div style="margin-bottom:10px auto">'.$body.'</div>';
+            $revalue .= '<div class="index_myad">'.$body.'</div>';
         }
     }
     $dsql->Close();

@@ -154,3 +154,7 @@ input,select,button{
     color: #10326b;
     float: right;
 }
+.index_myad{
+    margin:10px auto;
+    clear: both;
+}
