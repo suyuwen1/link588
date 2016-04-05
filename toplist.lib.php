@@ -28,8 +28,9 @@ function lib_toplist(&$ctag,&$refObj)
         $typeids[] = $row;
     }
     //var_dump($typeids);
+    //$revalue .= '<ul>';
     foreach($typeids as $key => $val){
-        $revalue .= '<a href="'.GetOneTypeUrlA($val).'"><span>'.$val['typename'];
+        $revalue .= '<li><a href="'.GetOneTypeUrlA($val).'">'.$val['typename'].'</a>';
         $dsql->SetQuery("SELECT id,typename,typedir,isdefault,ispart,defaultname,namerule2,moresite,siteurl,sitepath
           From `#@__arctype` WHERE reid='".$val['id']."' And ishidden<>1 order by sortrank asc");
         $dsql->Execute();
@@ -42,11 +43,12 @@ function lib_toplist(&$ctag,&$refObj)
             foreach ($typeids2 as $key2 => $val2) {
                 $revalue .= '<a href="'.GetOneTypeUrlA($val2).'">'.$val2['typename'].'</a>';
             }
-            $revalue .= '</div>';            
+            $revalue .= '</div>';
         }
         
-        $revalue .= '</span></a>';
+        $revalue .= '</li>';
     }
+    //$revalue .= '</ul>';
     $dsql->Close();
     //------------------------------------------------------
     return $revalue;
