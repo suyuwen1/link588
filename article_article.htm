@@ -12,7 +12,7 @@
     <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/style/syntaxhighlighter/scripts/shCore.js"></script>
 	<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/style/syntaxhighlighter/scripts/shAutoloader.js"></script>
 	<link type="text/css" rel="stylesheet" href="{dede:global.cfg_templets_skin/}/style/syntaxhighlighter/styles/shCoreDefault.css"/>
-	<script type="text/javascript">SyntaxHighlighter.all();</script>
+	<script type="text/javascript">var templetspath = "{dede:global.cfg_templets_skin/}"</script>
     <script language="javascript" type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/link588.js"></script>
 </head>
 <body>
@@ -31,13 +31,10 @@
             <div class="content">
                 {dede:field.body/}
             </div>
-            <div class="art_gxq">
-                <h3>推荐阅读:</h3>
-                <ul>
+            <div class="art_gxq">                
                 {dede:likearticle row=10 titlelen=100}
                     <li><a href="[field:arcurl/]">[field:title/]</a></li>
                 {/dede:likearticle}
-                </ul>
             </div>
             <div class="myad">{dede:myad name='indexfooterAD'/}</div>
         </div>

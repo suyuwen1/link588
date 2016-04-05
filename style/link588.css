@@ -212,7 +212,7 @@ input,select,button{
     padding: 0 0 10px 0;
 }
 .place a{
-    color: #000;
+    color: #333;
     text-decoration: none;
 }
 .place a:hover{
@@ -236,7 +236,8 @@ input,select,button{
     border-left: solid 3px #186ab4;
     padding: 10px;
     background-color: rgba(140, 186, 226, 0.09);
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
+    color: #333;
 }
 .viewcon .myad{
     text-align: center;
@@ -255,4 +256,9 @@ input,select,button{
 }
 .viewcon .art_gxq ul li{
     line-height: 28px;
+}
+.content pre{
+    margin: 10px 50px;
+    border-left: solid 3px lightgreen;
+    padding: 5px 10px;
 }
