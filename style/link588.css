@@ -5,6 +5,7 @@
     border: none;
 	outline: none;
 	box-sizing: border-box;
+    list-style: none;
 }
 body{
 	font:12px Microsoft YaHei,微软雅黑,sans-serif,Verdana,Arial,Tahoma;
@@ -25,7 +26,7 @@ input,select,button{
     width: 1000px;
     margin: 20px auto;
 }
-.header .top::after, .navMenu::after, .header .search::after, .module .search .tags::after, #main .con::after{
+.header .top::after, .navMenu::after, .header .search::after, .module .search .tags::after, #main .con::after, .listbox::after, .oneboxt::after{
     content: '';
     visibility: hidden;
     clear: both;
@@ -239,7 +240,7 @@ input,select,button{
     margin-bottom: 10px;
     color: #333;
 }
-.viewcon .myad{
+.myad{
     text-align: center;
     padding: 10px;
     display: block;
@@ -261,4 +262,70 @@ input,select,button{
     margin: 10px 50px;
     border-left: solid 3px lightgreen;
     padding: 5px 10px;
+}
+.link588_pages{
+    padding: 10px;
+    text-align: center;
+}
+.link588_pages ul{
+    list-style: none;
+    margin: 0 auto;
+}
+.link588_pages ul li{
+    display: inline;
+    border: solid 1px #E9E9E9;
+}
+.link588_pages ul li a{
+    color: #333;
+    padding: 0 10px;
+    text-decoration: none;
+}
+.link588_pages ul li a:hover{
+    color: #186ab4;
+}
+.thisclass a{
+    background-color: #E9E9E9;
+}
+.listbox{
+    margin-bottom: 10px 0;
+}
+.listbox ul li{
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+}
+.listbox ul li a{
+    padding: 5px 10px;
+    background-color: rgba(140, 186, 226, 0.09);
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+.articlelist .onebox{
+    margin: 10px 0;
+}
+.articlelist .onebox .oneboxt{
+    border-bottom: solid 1px #186ab4;
+    padding: 5px 10px;
+}
+.articlelist .onebox .oneboxtl{
+    font-size: 14px;
+    font-weight: 700;
+    display: inline-block;
+    float: left;
+}
+.articlelist .onebox .oneboxtl a{
+    text-decoration: none;
+    color: #333;
+}
+.articlelist .onebox .oneboxtl a:hover,.articlelist .onebox .oneboxtr a:hover{
+    color: #87c80c;
+    text-decoration: underline;
+}
+.articlelist .onebox .oneboxtr{
+    display: inline-block;
+    float: right;
+}
+.articlelist .onebox .oneboxtr a{
+    color: #666;
 }
