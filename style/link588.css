@@ -14,6 +14,14 @@ body{
 img{
 	border:none;
 }
+a{
+    color: #333;
+    text-decoration: none;
+}
+a:hover{
+    color: #87c80c;
+    text-decoration: underline;
+}
 input,select,button{
 	font:14px;
 	vertical-align:middle;
@@ -26,7 +34,7 @@ input,select,button{
     width: 1000px;
     margin: 20px auto;
 }
-.header .top::after, .navMenu::after, .header .search::after, .module .search .tags::after, #main .con::after, .listbox::after, .oneboxt::after{
+.header .top::after, .navMenu::after, .header .search::after, .module .search .tags::after, #main .con::after, .listbox::after, .oneboxt::after, .oneboxl::after, .pagelist::after{
     content: '';
     visibility: hidden;
     clear: both;
@@ -99,10 +107,6 @@ input,select,button{
 .header .search .tags a{
     float: left;
     margin: 0 10px;
-    color: #000;
-}
-.header .search .tags a:hover{
-    color: #bb4046;
 }
 .header .search .form{
     float: right;
@@ -212,14 +216,6 @@ input,select,button{
     font-size: 12px;
     padding: 0 0 10px 0;
 }
-.place a{
-    color: #333;
-    text-decoration: none;
-}
-.place a:hover{
-    text-decoration: underline;
-    color: #bb4046;
-}
 .viewcon{
     font-size: 14px;
 }
@@ -242,7 +238,6 @@ input,select,button{
 }
 .myad{
     text-align: center;
-    padding: 10px;
     display: block;
     clear: both;
 }
@@ -292,7 +287,7 @@ input,select,button{
 .listbox ul li{
     display: inline-block;
     float: left;
-    margin-right: 10px;
+    margin: 10px 10px 0 0;
 }
 .listbox ul li a{
     padding: 5px 10px;
@@ -300,6 +295,10 @@ input,select,button{
     text-decoration: none;
     color: #333;
     display: block;
+}
+.listbox ul li a:hover{
+    background-color: #87c80c;
+    color: #fff;
 }
 .articlelist .onebox{
     margin: 10px 0;
@@ -314,18 +313,42 @@ input,select,button{
     display: inline-block;
     float: left;
 }
-.articlelist .onebox .oneboxtl a{
-    text-decoration: none;
-    color: #333;
-}
-.articlelist .onebox .oneboxtl a:hover,.articlelist .onebox .oneboxtr a:hover{
-    color: #87c80c;
-    text-decoration: underline;
-}
 .articlelist .onebox .oneboxtr{
     display: inline-block;
     float: right;
 }
 .articlelist .onebox .oneboxtr a{
+    color: #666;
+    text-decoration: underline;
+}
+.articlelist .onebox .oneboxtr a:hover{
+    color: #87c80c;
+}
+.articlelist .onebox .oneboxl{
+    
+}
+.articlelist .onebox .oneboxl ul li{
+    display: inline-block;
+    float: left;
+    width: 333px;
+    padding: 5px 0;
+    font-size: 14px;
+    overflow: hidden;
+}
+.articlelist .onebox .oneboxl ul li span{
+    color: #666;
+    padding: 0 10px;
+    font-size: 12px;
+}
+.articlelist .listtitle{
+    margin: 10px 0;
+}
+.articlelist .listtitle ul li{
+    border-bottom: #ccc 1px dashed;
+    padding: 10px;
+    font-size: 14px;
+}
+.articlelist .listtitle ul li span{
+    float: right;
     color: #666;
 }

@@ -18,25 +18,14 @@
         <div class="listbox">
             <ul>
                 {dede:channel type='son'}
-                    <li><a href='[field:typeurl/]'>[field:typename/]</a></li>
+                    <li><a target="_blank" href='[field:typeurl/]'>[field:typename/]</a></li>
                 {/dede:channel}
             </ul>
         </div>
         <div class="articlelist">
             <div class="myad">{dede:myad name='innerfooterAD'/}</div>
-            <div class="listtitle">
-                <ul>
-                {dede:list pagesize='30'}
-                    <li><span>[field:pubdate function="MyDate('Y-m-d',@me)"/]</span><a target="_blank" href="[field:arcurl/]">[field:title/]</a></li>
-                {/dede:list}
-                </ul>
-            </div>
+            {dede:indexact}{/dede:indexact}
             <div class="myad">{dede:myad name='indexfooterAD'/}</div>
-            <div class="link588_pages">
-                <ul class="pagelist">
-                    {dede:pagelist listitem="info,index,end,pre,next,pageno" listsize="5"/}
-                </ul>
-            </div>
         </div>
     </div>
     {dede:include filename="footer.htm"/}

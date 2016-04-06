@@ -210,7 +210,7 @@ function lib_likearticle(&$ctag,&$refObj)
     $dsql->FreeResult("al");
     //var_dump($artlist);
     if ($artlist != '') {
-        $artlist = '<h3>推荐阅读:</h3><ul>'.$artlist.'</ul>';
+        $artlist = '<div class="art_gxq"><h3>推荐阅读:</h3><ul>'.$artlist.'</ul></div>';
     }
     return $artlist;
 }

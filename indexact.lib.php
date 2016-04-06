@@ -4,7 +4,7 @@ if(!defined('DEDEINC'))
     exit("Request Error!");
 }
 require_once(DEDEINC.'/common.inc.php');
-function lib_listact(&$ctag,&$refObj)
+function lib_indexact(&$ctag,&$refObj)
 {
     global $dsql,$envs;
     
@@ -40,10 +40,10 @@ function lib_listact(&$ctag,&$refObj)
              $typeids2[] = $row2;
         }
         if (!empty($typeids2)) {
-            $revalue .= '<div class="onebox"><div class="oneboxt"><span class="oneboxtl"><a href="'.GetOneTypeUrlA($val).'">'.$val['typename'].'</a></span><span class="oneboxtr"><a href="">更多</a></span></div><div class="oneboxl"><ul>';
+            $revalue .= '<div class="onebox"><div class="oneboxt"><span class="oneboxtl"><a href="'.GetOneTypeUrlA($val).'">'.$val['typename'].'</a></span><span class="oneboxtr"><a href="'.GetOneTypeUrlA($val).'">更多</a></span></div><div class="oneboxl"><ul>';
             foreach ($typeids2 as $key2 => $val2) {
                 $oneurl = GetOneArchive($val2['id']);
-                $revalue .= '<li><span>'.MyDate('m-d',$val2['pubdate']).'</span><a href="'.$oneurl['arcurl'].'">'.cn_substr($val2['title'],40).'</a></li>';
+                $revalue .= '<li><span>'.MyDate('m-d',$val2['pubdate']).'</span><a target="_blank" href="'.$oneurl['arcurl'].'">'.cn_substr($val2['title'],40).'</a></li>';
             }
             $revalue .= '</ul></div></div>';
         }
