@@ -20,13 +20,9 @@
         <div class="tags">
             {dede:myad name='innerTopBanner2'/}
         </div>
-        <form  name="formsearch" action="{dede:global.cfg_cmsurl/}/plus/search.php">
+        <form>
             <div class="form">
-            <input type="hidden" name="kwtype" value="0" />
-            <input name="q" type="text" class="search-keyword" id="search-keyword" value="在这里搜索..." onfocus="if(this.value=='在这里搜索...'){this.value='';}"  onblur="if(this.value==''){this.value='在这里搜索...';}" />
-            <select name="searchtype" class="search-option" id="search-option">
-                <option value="titlekeyword" selected='1'>智能模糊</option>
-            </select>
+            <input type="text" class="search-keyword" id="bdcsMain" value="在这里搜索..." onfocus="if(this.value=='在这里搜索...'){this.value='';}"  onblur="if(this.value==''){this.value='在这里搜索...';}" />
             <button type="submit" class="search-submit">搜索</button>
             </div>
         </form>

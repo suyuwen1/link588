@@ -25,7 +25,7 @@ function path() {
     return result;
 }
 function highlighter(){
-    // if (!IsMobileSys) {
+    if (isarticle) {
         SyntaxHighlighter.autoloader.apply(null, path(
         'applescript            $shBrushAppleScript.js',
         'actionscript3 as3      $shBrushAS3.js',
@@ -53,5 +53,5 @@ function highlighter(){
         'xml xhtml xslt html    $shBrushXml.js'
         ));
         SyntaxHighlighter.all();
-    // }
+    }
 }
