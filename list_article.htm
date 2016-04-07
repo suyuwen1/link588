@@ -26,7 +26,7 @@
             {dede:myad name='innerfooterAD'/}
             <div class="listtitle">
                 <ul>
-                {dede:list pagesize='30'}
+                {dede:list pagesize='30' titlelen='100'}
                     <li><span>[field:pubdate function="MyDate('Y-m-d',@me)"/]</span><a target="_blank" href="[field:arcurl/]">[field:title/]</a></li>
                 {/dede:list}
                 </ul>

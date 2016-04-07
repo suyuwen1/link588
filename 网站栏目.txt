@@ -31,6 +31,29 @@ C#,vb,C,Java,Delphi,java,Android,IOS,其它相关
 游戏攻略：
 网络游戏,单机游戏,电视游戏,休闲游戏,下载中心
 
+CMS教程：
+dedecms,ecshop,z-blog,UcHome,UCenter,风讯CMS,科汛cms,discuz,新云cms,phpwind,动易cms,phpcms,帝国cms,WordPress,drupal,其它cms
+
+平面设计：
+photoshop教程,摄影教程,Fireworks教程,CorelDraw教程,Illustrator教程,Painter教程,Freehand教程,Indesign,平面其它
+
+媒体动画：
+3Dmax,CAD,MAYA,Flash,其它教程
+
+软件教程:
+新手学堂,MAC教程,手机软件,办公软件,安全相关,文件管理,播放工具,磁盘光盘,网络通讯,系统工具,媒体工具,图形图像,经验技巧,编程开发,影音播放,浏览下载,U盘教程,加壳脱壳,其他工具
+
+硬件教程:
+笔记本,电视盒子,平板电脑,鼠标键盘,光存储,显示器,显卡,存储,CPU,内存,主板,硬件综合,机箱电源及散热器,打印机及其它外设,硬件其它
+
+财务会计：
+Excel运用,ERP运用,其它
+
 电子书籍：
 
+脚本下载：
+
+在线手册：
+
+素材下载：
 

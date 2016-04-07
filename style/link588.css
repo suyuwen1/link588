@@ -46,17 +46,10 @@ input,select,button{
     padding-left: 10px;
 }
 .header .banner1{
-    width: 500px;
+    width: 700px;
     height: 60px;
     float: left;
     margin-left: 20px;
-    overflow: hidden;
-}
-.header .banner2{
-    width: 200px;
-    height: 60px;
-    float: left;
-    margin-left: 10px;
     overflow: hidden;
 }
 .module{
@@ -159,6 +152,8 @@ input,select,button{
     font-size: 12px;
     line-height: 22px;
     text-decoration: none;
+    height: 22px;
+    overflow: hidden;
 }
 .con .conleft .conlist a:hover{
     color: #eb6100;
@@ -245,13 +240,20 @@ input,select,button{
     margin: 10px 0;
 }
 .viewcon .art_gxq{
-    margin: 10px 0;
+    padding: 10px 0;
+    color: #186ab4;
 }
 .viewcon .art_gxq ul{
     list-style: none;
 }
 .viewcon .art_gxq ul li{
-    line-height: 28px;
+    margin-top: 6px;
+}
+.viewcon .art_gxq ul li a{
+    color: #186ab4;
+}
+.viewcon .art_gxq ul li a:visited{
+    color: #eb6100;
 }
 .content pre{
     margin: 10px 50px;
@@ -334,6 +336,7 @@ input,select,button{
     padding: 5px 0;
     font-size: 14px;
     overflow: hidden;
+    height: 28px;
 }
 .articlelist .onebox .oneboxl ul li span{
     color: #666;

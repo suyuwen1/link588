@@ -43,7 +43,7 @@ function lib_indexact(&$ctag,&$refObj)
             $revalue .= '<div class="onebox"><div class="oneboxt"><span class="oneboxtl"><a href="'.GetOneTypeUrlA($val).'">'.$val['typename'].'</a></span><span class="oneboxtr"><a href="'.GetOneTypeUrlA($val).'">更多</a></span></div><div class="oneboxl"><ul>';
             foreach ($typeids2 as $key2 => $val2) {
                 $oneurl = GetOneArchive($val2['id']);
-                $revalue .= '<li><span>'.MyDate('m-d',$val2['pubdate']).'</span><a target="_blank" href="'.$oneurl['arcurl'].'">'.cn_substr($val2['title'],40).'</a></li>';
+                $revalue .= '<li><span>'.MyDate('m-d',$val2['pubdate']).'</span><a target="_blank" href="'.$oneurl['arcurl'].'">'.cn_substr($val2['title'],60).'</a></li>';
             }
             $revalue .= '</ul></div></div>';
         }
