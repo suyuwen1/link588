@@ -27,7 +27,7 @@
                 <div class="intro">'.@me.'</div>
                 ';
             {/dede:field.description}
-            <div class="myad">{dede:myad name='innerfooterAD'/}</div>
+            {dede:myad name='innerfooterAD'/}
             <div class="content">
                 {dede:field.body/}
             </div>
@@ -39,7 +39,7 @@
                 {dede:likearticle row=10 titlelen=100}
                     <li><a target="_blank" href="[field:arcurl/]">[field:title/]</a></li>
                 {/dede:likearticle}
-            <div class="myad">{dede:myad name='indexfooterAD'/}</div>
+            {dede:myad name='indexfooterAD'/}
         </div>
     </div>
     {dede:include filename="footer.htm"/}

@@ -77,7 +77,9 @@ function lib_lanmu(&$ctag,&$refObj)
             
             
             $body = lib_GetMyTagT($refObj, $typeid, $tagname, '#@__myad');
-            $revalue .= '<div class="index_myad">'.$body.'</div>';
+            if(!empty($body)){
+                $revalue .= '<div class="index_myad">'.$body.'</div>';
+            }
         }
     }
     $dsql->Close();
