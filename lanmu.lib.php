@@ -55,7 +55,7 @@ function lib_lanmu(&$ctag,&$refObj)
         if (!empty($typeids2)) {
             foreach ($typeids2 as $key2 => $val2) {
                 $oneurl = GetOneArchive($val2['id']);
-                $revalue .= '<span class="conlisttime">'.MyDate('m-d',$val2['pubdate']).'</span><a target="_blank" href="'.$oneurl['arcurl'].'">'.cn_substr($val2['title'],60).'</a>';
+                $revalue .= '<span class="conlisttime">'.MyDate('m-d',$val2['pubdate']).'</span><a target="_blank" href="'.$oneurl['arcurl'].'">'.cn_substr($val2['title'],55).'</a>';
                 //var_dump(GetOneArchive($val2['id']));
             }
         }
