@@ -267,18 +267,20 @@ input,select,button{
     margin: 0 auto;
 }
 .link588_pages ul li{
-    display: inline;
+    display: inline-block;
     border: solid 1px #E9E9E9;
+    margin: 0 2px;
 }
 .link588_pages ul li a{
     color: #333;
-    padding: 0 10px;
+    padding: 5px 10px;
     text-decoration: none;
+    display: inline-block;
 }
 .link588_pages ul li a:hover{
     color: #186ab4;
 }
-.thisclass a{
+.thisclass{
     background-color: #E9E9E9;
 }
 .listbox{
