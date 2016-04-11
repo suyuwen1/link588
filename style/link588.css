@@ -236,6 +236,8 @@ input,select,button{
 }
 .viewcon .content{
     margin: 10px 0;
+    word-break: break-all;
+    word-wrap: break-word;
 }
 .viewcon .art_gxq{
     padding: 10px 0;
