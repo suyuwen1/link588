@@ -6,7 +6,31 @@
 </head>
 <body>
 <?php
-    $regex = '<p[^>]*><img[^>]*jb51.net[^>]*><\/p>';
+    $regex = array(); //最后一个必须是替换链接。
+    $regex[0] = '<p>运行效果截图如下：<\/p>';
+    $regex[1] = '<p>在线演示地址如下：<\/p>';
+    $regex[2] = '<p[^>]*><img[^>]*jb51\.net[^>]*><\/p>';
+    $regex[3] = '<p[^>]*>(.*)?demo\.jb51\.net(.*)?<\/p>';
+    $regex[4] = '<span(.*)?><u>复制代码<\/u><\/span>';
+    $regex[5] = '<p><p><span(.*)?><U>复制代码<\/U><\/span> ';
+    $regex[6] = '运行效果图(.*)?<\/p>';
+    $regex[7] = 'jb51\.net';
+    
+    $rep = array();
+    $where = 'body REGEXP ';
+    foreach($regex as $key => $val){
+        if (count($regex) == ($key+1)) {//如果是最后一个就替换为link588.com
+            $where .= "'$val'";
+            $rep[$key] = 'link588.com';
+        }else{
+            $where .= "'$val' | ";
+            $rep[$key] = '';
+        }
+        $regex[$key] = '/'.$val.'/i';
+    }
+    
+    var_dump($regex,$rep,$where);
+    exit;
 
     function __autoload($className){
 	    include $className.'_class.php';
@@ -14,7 +38,7 @@
     
     $M = new Mydb();
     
-    $sql = "SELECT aid,body FROM `dede_addonarticle` WHERE body REGEXP '$regex'";
+    $sql = "SELECT aid,body FROM `dede_addonarticle` WHERE $where";
     //var_dump($sql);
 	$result = mysqli_query($M->mysql,$sql);
     //mysqli_error($M->mysql);
@@ -22,15 +46,17 @@
 	if($result && mysqli_num_rows($result)){
         while($row = mysqli_fetch_assoc($result)){
             //var_dump($row);
-            $body = preg_replace('/'.$regex.'/', '', $row['body']);
+            $body = mysqli_real_escape_string($M->mysql,preg_replace($regex, $rep, $row['body']));
             //echo '--------------------------------------------------------'.$body.'-------------------------------------------------------';
             $sql = "UPDATE `dede_addonarticle` SET `body` = '$body' WHERE aid = {$row['aid']}";
             $result2=mysqli_query($M->mysql,$sql);
 			if($result2 && mysqli_affected_rows($M->mysql)>0){
                 echo '替换成功！';
             }else{
-                echo '替换失败！';
+                echo $row['aid'].'------------------------------------替换失败！----------------------------------------<br>';
                 echo mysqli_error($M->mysql);
+                echo '<br>';
+                echo '<pre>'.$row['body'].'</pre><br>';
             }
         }
     }else{
