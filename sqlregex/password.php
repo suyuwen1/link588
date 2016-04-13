@@ -1,7 +1,7 @@
 <?php
 $dbhost="localhost";
 $dbuser="root";
-$dbpassword="root";
-$dbname="dedecms";
+$dbpassword="syw789456123";
+$dbname="link588";
 $dbdk="3306";
 ?>
