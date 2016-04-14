@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>jb51</title>
-</head>
-<body>
 <?php
+    if(empty($_POST['s'])){
+        exit;
+    }
     $regex = array(); //最后一个必须是替换链接。
-    $regex[0] = '<p[^>]*>(.*)?运行效果(截图|图)(.*)?<\/p>';
+    //$regex[0] = '<p[^>]*>(.*)?运行效果(截图|图)(.*)?<\/p>';
     $regex[1] = '<p>在线演示地址如下：<\/p>';
     $regex[2] = '<img[^>]*jb51\.net[^>]*>';
     $regex[3] = '<p[^>]*>(\r\n)*(.*)?demo\.jb51\.net(.*)?<\/p>';
@@ -38,6 +34,8 @@
         $regex[$key] = '/'.$val.'/i';
     }
     
+    $where = "aid = {$_POST['s']}";
+    
     //var_dump($regex,$rep,$where);
     //exit;
 
@@ -48,29 +46,34 @@
     $M = new Mydb();
     
     $sql = "SELECT aid,body FROM `dede_addonarticle` WHERE $where";
-    //var_dump($sql);
 	$result = mysqli_query($M->mysql,$sql);
-    //mysqli_error($M->mysql);
-    //var_dump($result,$M->mysql);
 	if($result && mysqli_num_rows($result)){
         while($row = mysqli_fetch_assoc($result)){
-            //var_dump($row);
-            $body = mysqli_real_escape_string($M->mysql,preg_replace($regex, $rep, $row['body']));
-            //echo '--------------------------------------------------------'.$body.'-------------------------------------------------------';
-            $sql = "UPDATE `dede_addonarticle` SET `body` = '$body' WHERE aid = {$row['aid']}";
-            $result2=mysqli_query($M->mysql,$sql);
-			if($result2 && mysqli_affected_rows($M->mysql)>0){
-                echo '替换成功！';
-            }else{
-                echo $row['aid'].'------------------------------------替换失败！----------------------------------------<br>';
-                echo mysqli_error($M->mysql);
-                echo '<br>';
-                echo '<pre>'.$row['body'].'</pre><br>';
+            $body = preg_replace($regex, $rep, $row['body']);
+            if ($body != $row['body']) {
+                $body = mysqli_real_escape_string($M->mysql,$body);
+                $sql = "UPDATE `dede_addonarticle` SET `body` = '$body' WHERE aid = {$row['aid']}";
+                $result2=mysqli_query($M->mysql,$sql);
+			    if($result2 && mysqli_affected_rows($M->mysql)>0){
+                    echo '替换成功！</br>';
+                }else{
+                    echo $row['aid'].'_替换失败！</br>';
+                }
             }
+            
+            
+            
+            // $result2=mysqli_query($M->mysql,$sql);
+			// if($result2 && mysqli_affected_rows($M->mysql)>0){
+            //     echo '替换成功！</br>';
+            // }else{
+            //     echo $row['aid'].'------------------------------------替换失败！----------------------------------------<br>';
+            //     echo mysqli_error($M->mysql);
+            //     echo '<br>';
+            //     echo '<pre>'.$row['body'].'</pre><br>';
+            // }
         }
     }else{
-        echo '没有要替换的数据！';
+        echo $_POST['s'].'没有要替换的数据！</br>';
     }
 ?>
-</body>
-</html>
