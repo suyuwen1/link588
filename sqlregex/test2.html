@@ -16,28 +16,33 @@
                 var sel = $("#sel").val();
                 if(s=='' || e=='' || sel=='') return false;
                 ////var dtd = $.Deferred();
-                for(var i=s; i<=e; i++){
-                    $.ajax({
-                        url: sel,
-                        type: 'post',
-                        data: {"s":i},
-                        //async: false,
-                        cache: false,
-                        beforeSend: loadgif
-                    })
-                    .done(function(d){
-                        $("#load").html('');
-                        $("#info").append(d);
-                    })
-                    .fail(function(d){
-                        $("#load").html('');
-                        $("#info").append(d+'出错啦！');
-                    });
-                }
+                // for(var i=s; i<=e; i++){
+                // }
+                
+                iajax(s,e,sel);
             });
             $("#cls").click(function(){
                 $("#info").html('');
             });
+        }
+        
+        function iajax(s,e,sel){
+            if(s>e) return false;
+                    $.ajax({
+                        url: sel,
+                        type: 'post',
+                        data: {"s":s},
+                        //async: false,
+                        cache: false,
+                        beforeSend: loadgif,
+                        success: function(d){
+                        $("#load").html('');
+                        $("#info").append(d);
+                        s++;
+                        //setInterval(iajax(s,e,sel), 500);
+                        iajax(s,e,sel);
+                        }
+                    });
         }
         
         function loadgif(){
