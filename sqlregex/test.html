@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../js/jquery-1.12.2.min.js"></script>
+    <script>
+        $(function(){
+            but();
+        });
+        
+        function but(){
+            $("#but").click(function(){
+                var s = $.trim($("#s").val());
+                var e = $.trim($("#e").val());
+                var sel = $("#sel").val();
+                if(s=='' || e=='' || sel=='') return false;
+                var dtd = $.Deferred();
+                for(var i=s; i<=e; i++){
+                    $.ajax({
+                        url: sel,
+                        type: 'post',
+                        data: {"s":i},
+                        async: false,
+                        beforeSend: loadgif
+                    })
+                    .done(function(d){
+                        //alert(d);
+                        $("#load").html('');
+                        $("#info").append(d);
+                    })
+                    .fail(function(d){
+                        $("#load").html('');
+                        $("#info").append(d+'出错啦！');
+                    });
+                }
+            });
+            $("#cls").click(function(){
+                $("#info").html('');
+            });
+        }
+        
+        function loadgif(){
+            $("#load").html('<img src="win10.gif">');
+        }
+        
+    </script>
+    <style>
+        .list{
+            padding: 10px;
+        }
+        .num{
+            padding-right: 20px;
+            width: 100px;
+            text-align: right;
+            display: inline-block; 
+        }
+    </style>
+</head>
+<body>
+    <div class="list">
+        <select name="" id="sel">
+            <option value="jb51.php">jb51</option>
+        </select>
+    </div>
+    <div class="list">开始ID：<input id="s" type="text"> 结束ID：<input id="e" type="text"></div>
+    <div class="list"><input id="but" type="button" value="提交"> <input id="cls" type="button" value="清屏"></div>
+    <div class="list" id="load"></div>
+    <div class="list" id="info"></div>
+</body>
+</html>

@@ -9,7 +9,7 @@
     $regex[3] = '<p[^>]*>(\r\n)*(.*)?demo\.jb51\.net(.*)?<\/p>';
     $regex[4] = '<span(.*)?><u>复制代码<\/u><\/span>';
     $regex[5] = '<p><p><span(.*)?><U>复制代码<\/U><\/span> ';
-    $regex[5] = '<br />复制代码';
+    $regex[5] = '<br \/>复制代码';
     $regex[6] = '<input[^>]*复制代码[^>]*>';
     $regex[7] = '<input[^>]*另存代码[^>]*>';
     $regex[8] = '<input[^>]*运行代码[^>]*>';
@@ -37,6 +37,7 @@
     $where = "aid = {$_POST['s']}";
     
     //var_dump($regex,$rep,$where);
+    //echo $_POST['s'].'</br>';
     //exit;
 
     function __autoload($className){
@@ -50,15 +51,18 @@
 	if($result && mysqli_num_rows($result)){
         while($row = mysqli_fetch_assoc($result)){
             $body = preg_replace($regex, $rep, $row['body']);
+            //echo $body.'</br>';
             if ($body != $row['body']) {
                 $body = mysqli_real_escape_string($M->mysql,$body);
                 $sql = "UPDATE `dede_addonarticle` SET `body` = '$body' WHERE aid = {$row['aid']}";
                 $result2=mysqli_query($M->mysql,$sql);
 			    if($result2 && mysqli_affected_rows($M->mysql)>0){
-                    echo '替换成功！</br>';
+                    echo '<span class="num">'.$row['aid'].'</span><span style="color:green;">替换成功！</span></br>';
                 }else{
-                    echo $row['aid'].'_替换失败！</br>';
+                    echo '<span class="num">'.$row['aid'].'</span><span style="color:red;">替换失败！</span></br>';
                 }
+            }else{
+                echo '<span class="num">'.$_POST['s'].'</span><span style="color:#777708;">不需要替换！</span></br>';
             }
             
             
@@ -74,6 +78,6 @@
             // }
         }
     }else{
-        echo $_POST['s'].'没有要替换的数据！</br>';
+        echo '<span class="num">'.$_POST['s'].'</span><span style="color:#666;">没有要替换的数据！</span></br>';        
     }
 ?>
