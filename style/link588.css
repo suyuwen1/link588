@@ -365,3 +365,10 @@ input,select,button{
     padding: 5px 10px;
     border: solid 1px #186ab4;
 }
+.content img{
+    max-width: 100%;
+    vertical-align: middle;
+}
+.content p{
+    margin-bottom: 10px;
+}
