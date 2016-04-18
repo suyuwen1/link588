@@ -256,7 +256,7 @@ input,select,button{
     color: #eb6100;
 }
 .content pre{
-    margin: 10px 50px;
+    margin: 10px 30px;
     border-left: solid 3px lightgreen;
     padding: 5px 10px;
 }
@@ -356,4 +356,19 @@ input,select,button{
 .articlelist .listtitle ul li span{
     float: right;
     color: #666;
+}
+.content textarea{
+    width: 100%;
+    height: 300px;
+}
+.content input{
+    padding: 5px 10px;
+    border: solid 1px #186ab4;
+}
+.content img{
+    max-width: 100%;
+    vertical-align: middle;
+}
+.content p{
+    margin-bottom: 10px;
 }
