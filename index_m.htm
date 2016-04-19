@@ -37,6 +37,14 @@
 					height: 36px;
 					line-height: 36px;
 				}
+				.am-btn{
+					display: block;
+					width: 100%;
+				}
+				.am-form-group{
+					padding: 10px 0;
+					margin: 0;
+				}
 		</style>
 	</head>
 	<body>
@@ -58,6 +66,12 @@
 				</div>
 			</div>
 		</nav>
+		<form style="padding:0 10px;">
+      <div class="am-form-group">
+        <input name="q" type="text" id="bdcsMain" class="am-form-field am-input-sm" placeholder="输入关键词">
+      </div>
+      <button type="submit" class="am-btn am-btn-default am-btn-sm">搜索</button>
+		</form>
 		<!-- Slider -->
 		<div data-am-widget="slider" class="am-slider am-slider-a1" data-am-slider='{"directionNav":false}'>
 			<ul class="am-slides">{dede:arclist flag='f' row='5'}
