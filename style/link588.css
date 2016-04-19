@@ -8,7 +8,7 @@
     list-style: none;
 }
 body{
-	font:12px Microsoft YaHei,微软雅黑,sans-serif,Verdana,Arial,Tahoma;
+	font:14px Microsoft YaHei,微软雅黑,sans-serif,Verdana,Arial,Tahoma;
     overflow: auto;
 }
 img{
@@ -371,4 +371,7 @@ input,select,button{
 }
 .content p{
     margin-bottom: 10px;
+}
+.prenext{
+    padding: 10px 0;
 }

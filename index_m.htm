@@ -1,0 +1,93 @@
+<!doctype html>
+<html class="no-js">
+	<head>
+		<meta charset="{dede:global.cfg_soft_lang/}">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>{dede:global.cfg_webname/}</title>
+		<link rel="shortcut icon" href="/favicon.ico"/>
+    	<link rel="bookmark" href="/favicon.ico"/>
+		<meta name="description" content="{dede:global.cfg_description/}" />
+		<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<link rel="icon" type="image/png" href="assets/i/favicon.png">
+		<link rel="stylesheet" href="assets/css/amazeui.min.css">
+		<link rel="stylesheet" href="assets/css/app.css">
+		<style>
+			@media only screen and (min-width: 1200px) {
+			      .blog-g-fixed {
+			        max-width: 1200px;
+			      }
+			    }
+			
+			    @media only screen and (min-width: 641px) {
+			      .blog-sidebar {
+			        font-size: 1.4rem;
+			      }
+			    }
+
+			    .blog-footer {
+			      padding: 10px 0;
+			      text-align: center;
+			    }
+				.am-list>li>a{
+					overflow: hidden;
+					padding: 0;
+					height: 36px;
+					line-height: 36px;
+				}
+		</style>
+	</head>
+	<body>
+		<!-- Header -->
+		<header data-am-widget="header" class="am-header am-header-default">
+			 <h1 class="am-header-title"><a href="index.php"><img src="{dede:global.cfg_templets_skin/}/images/logo_m.png"></a></h1>
+		</header>
+		<!-- Menu -->
+		<nav data-am-widget="menu" class="am-menu  am-menu-offcanvas1" data-am-menu-offcanvas>
+			<a href="javascript: void(0)" class="am-menu-toggle"> <i class="am-menu-toggle-icon am-icon-bars"></i>
+			</a>
+			<div class="am-offcanvas">
+				<div class="am-offcanvas-bar">
+					<ul class="am-menu-nav sm-block-grid-1">
+						<li> <a href="index.php">首页</a>
+						</li>{dede:channel type='top' row='10'}
+						<li> <a href="list.php?tid=[field:id/]">[field:typename/]</a>
+						</li>{/dede:channel}</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- Slider -->
+		<div data-am-widget="slider" class="am-slider am-slider-a1" data-am-slider='{"directionNav":false}'>
+			<ul class="am-slides">{dede:arclist flag='f' row='5'}
+				<li>
+					<a href="view.php?aid=[field:id/]">
+						<img src="[field:litpic/]">
+					</a>
+				</li>{/dede:arclist}</ul>
+		</div>
+		<!-- List -->
+		{dede:channelartlist}
+		<div data-am-widget="list_news" class="am-list-news am-list-news-default">
+			<!--列表标题-->
+			<div class="am-list-news-hd am-cf">
+				<!--带更多链接-->
+				<a href="list.php?tid={dede:field name='id'/}">
+					 <h2>{dede:field name='typename'/}</h2>
+				</a>
+			</div>
+			<div class="am-list-news-bd">
+				<ul class="am-list">{dede:arclist titlelen='60' row='8'}
+					<li class="am-g"> <a href="view.php?aid=[field:id/]" class="am-list-item-hd">[field:title /]</a>
+					</li>{/dede:arclist}</ul>
+			</div>
+			<!--更多在底部-->
+			<div class="am-list-news-ft"> <a class="am-list-news-more am-btn am-btn-default" href="list.php?tid={dede:field name='id'/}">查看更多 &raquo;</a>
+			</div>
+		</div>{/dede:channelartlist}{dede:include filename="footer_m.htm"/}
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/amazeui.min.js"></script>
+	</body>
+
+</html>
