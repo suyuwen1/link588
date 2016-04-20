@@ -27,7 +27,8 @@
         }
         
         function iajax(s,e,sel){
-            if(s>e) return false;
+            console.log(s,e,sel);
+            if(Number(s)>Number(e)) return false;
                     $.ajax({
                         url: sel,
                         type: 'post',
@@ -39,8 +40,8 @@
                         $("#load").html('');
                         $("#info").append(d);
                         s++;
-                        //setInterval(iajax(s,e,sel), 500);
-                        iajax(s,e,sel);
+                        setInterval(iajax(s,e,sel), 500);
+                        //iajax(s,e,sel);
                         }
                     });
         }
