@@ -31,7 +31,7 @@ input,select,button{
     text-align: center;
 }
 .header .top{
-    width: 1000px;
+    width: 1330px;
     margin: 20px auto;
 }
 .header .top::after, .navMenu::after, .header .search::after, .module .search .tags::after, #main .con::after, .listbox::after, .oneboxt::after, .oneboxl::after, .pagelist::after{
@@ -83,7 +83,7 @@ input,select,button{
     background-color: #87c80c;
 }
 .header .search{
-    width: 1000px;
+    width: 1330px;
     margin: 0 auto;
     padding: 10px 0;
 }
@@ -120,7 +120,7 @@ input,select,button{
     cursor: pointer;
 }
 #main{
-    width: 1000px;
+    width: 1330px;
     margin: 0 auto;
 }
 #main .con{
@@ -129,7 +129,7 @@ input,select,button{
 }
 .con .conleft{
     display: inline-block;
-    width: 326px;
+    width: 436px;
     float: left;
     margin-right: 10px;
     margin-bottom: 10px;
@@ -152,6 +152,8 @@ input,select,button{
     text-decoration: none;
     height: 22px;
     overflow: hidden;
+    word-break: break-all;
+    word-wrap: break-word;
 }
 .con .conleft .conlist a:hover{
     color: #eb6100;
@@ -334,11 +336,13 @@ input,select,button{
 .articlelist .onebox .oneboxl ul li{
     display: inline-block;
     float: left;
-    width: 333px;
+    width: 443px;
     padding: 5px 0;
     font-size: 14px;
     overflow: hidden;
     height: 28px;
+    word-break: break-all;
+    word-wrap: break-word;
 }
 .articlelist .onebox .oneboxl ul li span{
     color: #666;
