@@ -1,8 +1,0 @@
-1、文章采集时导入时标题长度问题
-本来这个问题应该是在后台  “系统-系统基本参数-其它选项-文档标题最大长度”进行设置的
-但发现这样并没有效果，检查一下发现是其程序存在的一个小问题。
-找到 dedeco_export.php
-中的 
-$mainSql = str_replace('@title@',cn_substr($title, 60),$mainSql);
-改为：
-$mainSql = str_replace('@title@',cn_substr($title, $cfg_title_maxlen),$mainSql); 

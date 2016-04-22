@@ -1,0 +1,18 @@
+1、文章采集时导入时标题长度问题  （数据库表结构限制大小也的改）
+本来这个问题应该是在后台  “系统-系统基本参数-其它选项-文档标题最大长度”进行设置的
+但发现这样并没有效果，检查一下发现是其程序存在的一个小问题。
+找到 dedeco_export.php
+中的 
+$mainSql = str_replace('@title@',cn_substr($title, 60),$mainSql);
+改为：
+$mainSql = str_replace('@title@',cn_substr($title, $cfg_title_maxlen),$mainSql); 
+
+
+2、DedeCMS采集文章关键词太短
+找到 include\dedecollection.class.php 这个文件
+在716行 $keywords = trim(cn_substr(html2text($inarr[1]),30));
+当中的 30 改为你想要的长度就好了！！
+
+
+源文件修改 找到如下文件  /dede/article_add.php和/dede/article_edit.php和/dede/archives_add.php以及/dede/archives_edit.php查找  $keywords = cn_substrR($keywords,60);    $keywords = trim(cn_substrR($keywords,60)); 将里面的数值改为255  
+  3./dede/inc/inc_archives_functions.php找到 if(strlen($keywords.$k)>= 将后面的数值改为255
