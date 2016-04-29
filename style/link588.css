@@ -31,10 +31,10 @@ input,select,button{
     text-align: center;
 }
 .header .top{
-    width: 1330px;
+    width: 1000px;
     margin: 20px auto;
 }
-.header .top::after, .navMenu::after, .header .search::after, .module .search .tags::after, #main .con::after, .listbox::after, .oneboxt::after, .oneboxl::after, .pagelist::after{
+.header .top::after, .navMenu::after, .header .search::after, .module .search .tags::after, #main .con::after, .listbox::after, .oneboxt::after, .oneboxl::after, .pagelist::after, .linkbox .f6::after{
     content: '';
     visibility: hidden;
     clear: both;
@@ -58,7 +58,7 @@ input,select,button{
     /*text-align: left;*/
 }
 .navMenu{
-    width: 1330px;
+    width: 1000px;
     margin: 0 auto;
     height: 40px;
 }
@@ -83,7 +83,7 @@ input,select,button{
     background-color: #87c80c;
 }
 .header .search{
-    width: 1330px;
+    width: 1000px;
     margin: 0 auto;
     padding: 10px 0;
 }
@@ -120,7 +120,7 @@ input,select,button{
     cursor: pointer;
 }
 #main{
-    width: 1330px;
+    width: 1000px;
     margin: 0 auto;
 }
 #main .con{
@@ -129,7 +129,7 @@ input,select,button{
 }
 .con .conleft{
     display: inline-block;
-    width: 436px;
+    width: 326px;
     float: left;
     margin-right: 10px;
     margin-bottom: 10px;
@@ -193,6 +193,7 @@ input,select,button{
     background-color: #fff;
     z-index: 1000;
     overflow: hidden;
+    padding: 5px 0;
 }
 .toplistm a{
     display: inline-block;
@@ -378,4 +379,26 @@ input,select,button{
 }
 .prenext{
     padding: 10px 0;
+}
+.bar_more{
+    background-color: #87c80c;
+}
+.linkbox {
+    padding: 10px 0;
+    font-size: 12px;
+}
+.linkbox h3{
+    border-bottom: solid 1px #186ab4;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+.linkbox .f6{
+    padding: 5px 10px;
+}
+.linkbox .f6 li{
+    display: inline-block;
+    float: left;
+    width: 125px;
+    line-height: 30px;
+    text-align: center;
 }

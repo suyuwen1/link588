@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{dede:global name='cfg_webname'/}_网站地图</title>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<link rel="bookmark" href="/favicon.ico"/>
+<link href="{dede:global.cfg_templets_skin/}/style/link588.css" rel="stylesheet" media="screen" type="text/css" />
+<script language="javascript" type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/jquery-1.12.2.min.js"></script>
+<script language="javascript" type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/link588.js"></script>
+</head>
+<body>
+    {dede:include filename="head.htm"/}
+    <div id="main">
+        <div class="place"><strong>当前位置：</strong> <a href="http://www.link588.com">首页</a> > 网站地图</div>
+        <div class="con">
+            {dede:global name='maplist'/}
+        </div>
+    </div>
+    {dede:include filename="footer.htm"/}
+</body>
+</html>
