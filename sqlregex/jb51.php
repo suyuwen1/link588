@@ -26,7 +26,8 @@
     $regex[5] = '<input[^>]*(复制代码|另存代码|运行代码)[^>]*>';
     $regex[6] = 'alt\s*=\s*(\'|\")[^\'\"]*\1';
     $regex[7] = 'title\s*=\s*(\'|\")[^\'\"]*\1';
-    $regex[8] = 'jb51\.net';
+    $regex[8] = '<dl[^>]*><dt>软件名称.*?<\/dl>';
+    $regex[9] = 'jb51\.net';
     
     $rep = array();
     $where = "body REGEXP '";
