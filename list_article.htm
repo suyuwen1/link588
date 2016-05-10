@@ -23,8 +23,6 @@
     <script language="javascript" type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/jquery-1.12.2.min.js"></script>
     <script type="text/javascript">var isarticle = false;</script>
     <script language="javascript" type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/link588.js"></script>
-</head>
-<body>
     {dede:include filename="head.htm"/}
     <div id="main">
         <div class="place"><strong>当前位置：</strong> {dede:field name='position'/}</div>
@@ -36,7 +34,7 @@
             </ul>
         </div>
         <div class="articlelist">
-            {dede:myad name='innerfooterAD'/}
+            <div class="list_article_1"><script src='/plus/ad_js.php?aid=9' language='javascript'></script></div>
             <div class="listtitle">
                 <ul>
                 {dede:list pagesize='30' titlelen='100' orderby='id'}
@@ -44,7 +42,7 @@
                 {/dede:list}
                 </ul>
             </div>
-            {dede:myad name='indexfooterAD'/}
+            <div class="list_article_2"><script src='/plus/ad_js.php?aid=10' language='javascript'></script></div>
             <div class="link588_pages">
                 <ul class="pagelist">
                     {dede:pagelist listitem="info,index,end,pre,next,pageno" listsize="3"/}

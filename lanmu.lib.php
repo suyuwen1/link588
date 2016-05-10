@@ -63,22 +63,11 @@ function lib_lanmu(&$ctag,&$refObj)
         $revalue .= '</div></div>';
         
         if(($key+1) % 3 == 0){
-            //$revalue .= '</div>';
             $n++;
-            $tagname = 'indexLeftBanner'.$n;
-            //select * from dede_archives where typeid in(select id from dede_arctype where topid = 12) order by pubdate desc , senddate desc , id desc
-            // $row = $dsql->GetOne(" SELECT * FROM dede_myad WHERE tagname LIKE '$tagname' ORDER BY typeid DESC ");
-            // $revalue .= var_dump($row,$tagname);
-            // if($row != '')(
-            //     $revalue .= '<div style="margin-bottom:10px auto">'.$row['normbody'].'</div>';
-            // )
-            
-            //$tpsql = " reid=0 AND ispart<>2 AND ishidden<>1 AND channeltype>0 ";
-            
-            
+            $tagname = 'index_myad'.$n;
             $body = lib_GetMyTagT($refObj, $typeid, $tagname, '#@__myad');
             if(!empty($body)){
-                $revalue .= '<div class="index_myad">'.$body.'</div>';
+                $revalue .= '<div class="index_myad'.$n.'">'.$body.'</div>';
             }
         }
     }

@@ -86,8 +86,7 @@
 						width: 100%;
 					}
 		</style>
-	</head>
-	<body>{dede:include filename="header_m.htm"/}
+{dede:include filename="header_m.htm"/}
 		<div class="am-g am-g-fixed blog-g-fixed">
 			<div class="am-u-md-8">{dede:field name='position'/}</div>
 			<div class="am-u-md-8">
@@ -98,7 +97,9 @@
 
       </h3>
 					 <h4 class="am-article-meta blog-meta"><small>时间:{dede:field.pubdate function="MyDate('Y-m-d H:i',@me)"/}</small>&nbsp;&nbsp;<small>来源:{dede:field.source/}</small></h4>
+					 <div class="m_article_article_1"><script src='/plus/ad_js.php?aid=23' language='javascript'></script></div>
 					<div class="am-g blog-content" style='padding: 10px;'>{dede:field.body/} {dede:field.vote/}</div>
+					<div class="m_article_article_2"><script src='/plus/ad_js.php?aid=24' language='javascript'></script></div>
 					<div class="dede_pages">
 						<ul data-am-widget="pagination" class="am-pagination am-pagination-default">{dede:pagebreak/}</ul>
 					</div>
@@ -113,7 +114,6 @@
 
     </ul>-->
 			</div>
-			<div class="banner1">{dede:myad name='m_innerBanner1'/}</div>
 			<div class="am-u-md-4 blog-sidebar">
 				<div class="am-panel-group">
 					<section class="am-panel am-panel-default art_gxq">
@@ -123,6 +123,7 @@
 					</section>
 				</div>
 			</div>
+			<div class="m_article_article_3"><script src='/plus/ad_js.php?aid=25' language='javascript'></script></div>
 			<div class="prenext">{dede:prenext get='pre'/}</br>{dede:prenext get='next'/}</div>
 		</div>{dede:include filename="footer_m.htm"/}
 		<!--[if lt IE 9]>
