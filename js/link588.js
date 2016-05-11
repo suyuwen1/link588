@@ -1,6 +1,7 @@
 $(function(){
     toplisthover();
     highlighter();
+    up();
 });
 
 function toplisthover(){
@@ -62,4 +63,26 @@ function runEx(id) {
     TestWin.opener = null // 防止代码对论谈页面修改
     TestWin.document.write($val);//向这个打开的窗口中写入代码code，这样就实现了运行代码功能。
     TestWin.document.close();
+}
+//向上滚动代码
+function up(){
+    click_up();
+    var w_w = $(window).width();
+    var up_r = (w_w - 1000)/2 - 100;
+    var s_h;
+    $(window).scroll(function(){
+        s_h = $(this).scrollTop();
+        if(s_h > 200){
+            $(".tool_up").css({"right":up_r}).show('fast');
+        }else{
+            $(".tool_up").hide();
+        }
+    });
+}
+//点击up
+function click_up(){
+    $(".tool_up").click(function(){
+        $('html,body').animate({scrollTop:0}, 'fast');
+        // $(window).scrollTop(0);
+    });
 }

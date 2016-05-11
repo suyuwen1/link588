@@ -402,3 +402,20 @@ input,select,button{
     line-height: 30px;
     text-align: center;
 }
+.tool_up{
+    width: 40px;
+    position: fixed;
+    border: solid 1px #ccc;
+    padding: 5px;
+    right: 0px;
+    bottom: 300px;
+    display: none;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    background-color: #fff;
+}
+.tool_up:hover{
+    background-color: #F3F3F3;
+}
