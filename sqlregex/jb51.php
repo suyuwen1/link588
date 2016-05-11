@@ -27,7 +27,7 @@
     $regex[6] = 'alt\s*=\s*(\'|\")[^\'\"]*\1';
     $regex[7] = 'title\s*=\s*(\'|\")[^\'\"]*\1';
     $regex[8] = '<dl[^>]*><dt>软件名称.*?<\/dl>';
-    $regex[9] = 'jb51\.net';
+    $regex[9] = '(jb51\.net|JB51|jb51)';
     
     $rep = array();
     $where = "body REGEXP '";
