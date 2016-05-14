@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <title>{dede:field name='position' runphp='yes'}
                 $tc='_'; //分隔符
+                $tk='';
                 $tw=$GLOBALS['cfg_list_symbol']; //调用位置分隔符
                 @me=html2text(@me); //去除html标签
                 $tf=split($tw,@me); //分解成数组
-                for($ta=(count($tf)-2);$ta>=1;$ta--){ //循环赋值给$tk
-                    $tk.=trim($tf[$ta]).$tc;
+                $tf=array_filter($tf);
+                for($ta=(count($tf)-1);$ta>=0;$ta--){ //循环赋值给$tk
+                        $tk.=trim($tf[$ta]).$tc;
                 }
-                $tk=substr($tk,0,-1);
+                $tk=str_replace($tc.'主页','',substr($tk,0,-1));
                 @me=$tk; //赋值给@me
             {/dede:field}_{dede:global name='cfg_webname'/}</title>
     <link rel="shortcut icon" href="/favicon.ico"/>
