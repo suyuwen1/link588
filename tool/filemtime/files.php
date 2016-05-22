@@ -1,4 +1,5 @@
 <?php
+    set_time_limit(0);
     // if(empty($_GET['path']) || empty($_GET['stime']) || empty($_GET['endtime'])){
     //     echo '<font color="red">path、stime、endtime不能为空！</font>';
     // }
@@ -15,7 +16,7 @@
         
             $data['num'] = 2;
             $data['total'] = count($data['dt']);
-            $data['info'] = '一共 '.count($file).' 个文件';
+            $data['info'] = '一共 '.count($data['dt']).' 个文件';
             echo json_encode($data);
         }else {
             echo '打开目录失败！';

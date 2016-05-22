@@ -1,4 +1,5 @@
 <?php
+    set_time_limit(0);
     // if(empty($_GET['path']) || empty($_GET['stime']) || empty($_GET['endtime'])){
     //     echo '<font color="red">path、stime、endtime不能为空！</font>';
     // }
