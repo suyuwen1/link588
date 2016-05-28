@@ -39,7 +39,7 @@ function lib_lanmu(&$ctag,&$refObj)
         // }
         if ($key == 0) {
             $revalue .= '<div class="conleft"><div class="contitle">最近更新</div><div class="conlist">';
-            $sqltext = " SELECT * FROM dede_archives ORDER BY pubdate desc , senddate desc , id desc limit 16";
+            $sqltext = " SELECT title,id,pubdate FROM dede_archives ORDER BY pubdate desc , senddate desc , id desc limit 16";
         }else {
             $revalue .= '<div class="conleft"><div class="contitle">'.$val['typename'].'<a class="more" href="'.GetOneTypeUrlA($val).'">更多</a></div><div class="conlist">';
             $sqltext = "select title,id,pubdate from dede_archives where typeid in(select id from dede_arctype where topid = ".$val['id'].") order by pubdate desc , senddate desc , id desc limit 16";
