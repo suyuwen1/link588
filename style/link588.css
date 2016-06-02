@@ -433,13 +433,11 @@ input,select,button{
     text-align: left;
 }
 .sendurl_con input{
-    border: solid 1px #fff;
+    border: none;
     background-color: #F3F3F3;
     padding: 5px;
     font-size: 18px;
     margin-right: 20px;
-    opacity: 0;
-    filter: alpha(opacity=0);
 }
 .sendurl_con_url{
     width: 600px;
