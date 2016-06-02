@@ -419,3 +419,51 @@ input,select,button{
 .tool_up:hover{
     background-color: #F3F3F3;
 }
+.sendurl{
+    position: fixed;
+    bottom: 0px;
+    background-color: #186ab4;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+}
+.sendurl_con{
+    width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+.sendurl_con input{
+    border: none;
+    background-color: #F3F3F3;
+    padding: 5px;
+    font-size: 18px;
+    margin-right: 20px;
+}
+.sendurl_con_url{
+    width: 600px;
+}
+.sendurl_con_email{
+    width: 220px;
+}
+.sendurl_con_tj{
+    padding: 5px 20px;
+    background-color: #186ab4;
+    border: solid 1px #fff;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 30px;
+    font-size: 16px;
+}
+.sendurl_con_tj:hover{
+    background-color: #87c80c;
+}
+.sendurl_con_gb{
+    color: #fff;
+    font-size: 16px;
+    background-color: #186ab4;
+    border: none;
+    cursor: pointer;
+}
+.sendurl_con_gb:hover{
+    color: #87c80c;
+}
