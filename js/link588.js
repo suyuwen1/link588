@@ -95,7 +95,7 @@ function sendurl(){
     $(".sendurl_con_tj").click(function(){
         var url = $.trim($(".sendurl_con_url").val());
         var email = $.trim($(".sendurl_con_email").val());
-        if(url == '' || email =='') return false;
+        //if(url == '' || email =='') return false;
         if(ajax) ajax.abort();
         ajax = $.ajax({
             type: "post",
@@ -104,10 +104,11 @@ function sendurl(){
             dataType: "json",
             beforeSend: function(){
                 infohide = false;
-                $(".info").html('<img height="31" src="win10.gif">').show();
+                $(".info1").html('<img height="31" src="win10.gif">').show();
             },
             success: function (dt) {
-                $(".info").html(dt.i).show();
+                $(".info1").html('');
+                $(".info"+dt.n).html(dt.i).show();
                 infohide = true;
             }
         });
@@ -117,9 +118,14 @@ function sendurl(){
         
     });
     
-    $(".sendurl_con_url").click(function(){
+    $(".info1,.info2").click(function(){
+        $(this).hide();
+    });
+    
+    $(".sendurl_con_url,.sendurl_con_email").click(function(){
         if(infohide){
-            $(".info").hide();            
+            var c = $(this).attr('d');
+            $('.'+c).hide();
         }
     });
 }

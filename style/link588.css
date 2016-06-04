@@ -452,7 +452,7 @@ input,select,button{
     border: solid 1px #fff;
     color: #fff;
     cursor: pointer;
-    margin-right: 30px;
+    margin-right: 20px;
     font-size: 16px;
 }
 .sendurl_con_tj:hover{
@@ -468,10 +468,19 @@ input,select,button{
 .sendurl_con_gb:hover{
     color: #87c80c;
 }
-.sendurl .info{
+.sendurl .info1{
     display: none;
     position: absolute;
     right: 405px;
+    top: 0;
+    height: 31px;
+    line-height: 31px;
+}
+.sendurl .info2{
+    display: none;
+    position: absolute;
+    right: 165px;
+    top: 0;
     height: 31px;
     line-height: 31px;
 }
