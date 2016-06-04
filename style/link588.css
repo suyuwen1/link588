@@ -431,6 +431,7 @@ input,select,button{
     width: 1000px;
     margin: 0 auto;
     text-align: left;
+    position: relative;
 }
 .sendurl_con input{
     border: none;
@@ -466,4 +467,11 @@ input,select,button{
 }
 .sendurl_con_gb:hover{
     color: #87c80c;
+}
+.sendurl .info{
+    display: none;
+    position: absolute;
+    right: 405px;
+    height: 31px;
+    line-height: 31px;
 }

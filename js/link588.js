@@ -2,6 +2,7 @@ $(function(){
     toplisthover();
     highlighter();
     up();
+    sendurl();
 });
 
 function toplisthover(){
@@ -84,5 +85,41 @@ function click_up(){
     $(".tool_up").click(function(){
         $('html,body').animate({scrollTop:0}, 'fast');
         // $(window).scrollTop(0);
+    });
+}
+
+//url提交
+function sendurl(){
+    var ajax;
+    var infohide = false;
+    $(".sendurl_con_tj").click(function(){
+        var url = $.trim($(".sendurl_con_url").val());
+        var email = $.trim($(".sendurl_con_email").val());
+        if(url == '' || email =='') return false;
+        if(ajax) ajax.abort();
+        ajax = $.ajax({
+            type: "post",
+            url: "post.php",
+            data: {"url":url,"email":email},
+            dataType: "json",
+            beforeSend: function(){
+                infohide = false;
+                $(".info").html('<img height="31" src="win10.gif">').show();
+            },
+            success: function (dt) {
+                $(".info").html(dt.i).show();
+                infohide = true;
+            }
+        });
+    });
+    
+    $(".sendurl_con_gb").click(function(){
+        
+    });
+    
+    $(".sendurl_con_url").click(function(){
+        if(infohide){
+            $(".info").hide();            
+        }
     });
 }
