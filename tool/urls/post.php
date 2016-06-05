@@ -18,10 +18,11 @@
                 $url = urlencode(trim($_POST['url']));
                 $email = trim($_POST['email']);
                 $ctime = time();
-                $sql = "SELECT id FROM `urls` WHERE `url` = '$url'";
+                $sql = "SELECT `hf` FROM `urls` WHERE `url` = '$url'";
                 $result = mysqli_query($M->mysql,$sql);
                 if($result && mysqli_num_rows($result)){
-                    $dt['i'] = '<font color="red">已收录！</font>';
+                    $row=mysqli_fetch_assoc($result);
+                    $dt['i'] = '<font color="red">'.$row['hf'].'</font>';
                 }else {
                     $sql = "insert into `urls` (url,email,ctime) values ('$url','$email','$ctime')";
                     $result=mysqli_query($M->mysql,$sql);

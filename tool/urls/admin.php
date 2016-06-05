@@ -48,7 +48,7 @@
     if(!empty($_POST['xz'])){
         if ($_POST['tj'] == '批准') {
             foreach ($_POST['xz'] as $key => $value) {
-                $sql = "update `urls` set `hf` = 99 where `id` = $value";
+                $sql = "update `urls` set `hf` = '已收录！' where `id` = $value";
                 $result=mysqli_query($M->mysql,$sql);
                 echo mysqli_error($M->mysql);
 			    if($result&&mysqli_affected_rows($M->mysql)>0){
@@ -66,7 +66,7 @@
                 $jjc=$_POST['jjc2'];
             }
             foreach ($_POST['xz'] as $key => $value) {
-                $sql = "update `urls` set `hf` = $jjc where `id` = $value";
+                $sql = "update `urls` set `hf` = '$jjc' where `id` = $value";
                 $result=mysqli_query($M->mysql,$sql);
 			    if($result&&mysqli_affected_rows($M->mysql)>0){
                     echo $value.'批准成功！ ';
@@ -78,7 +78,7 @@
     }
     
     $a=array();
-    $sql = "SELECT id,url,email,ctime FROM `urls` WHERE `hf` = 0";
+    $sql = "SELECT id,url,email,ctime FROM `urls` WHERE `hf` = '0'";
     $result = mysqli_query($M->mysql,$sql);
     if($result && mysqli_num_rows($result)){
 	    while($row=mysqli_fetch_assoc($result)){
@@ -91,10 +91,10 @@
         <input type="submit" name="tj" value="批准">
         <input type="submit" name="tj" value="拒绝">
         <select name="jjc" class="jjc">
-            <option value="1">已收录！</option>
-            <option value="2">资源不符合要求！</option>
-            <option value="3">资源网址无法打开！</option>
-            <option value="4">资源重复！</option>
+            <option value="已收录！">已收录！</option>
+            <option value="资源不符合要求！">资源不符合要求！</option>
+            <option value="资源网址无法打开！">资源网址无法打开！</option>
+            <option value="资源重复！">资源重复！</option>
         </select>
     </div>
     <div class="con">
@@ -114,10 +114,10 @@
         <input type="submit" name="tj" value="批准">
         <input type="submit" name="tj" value="拒绝">
         <select name="jjc2" class="jjc">
-            <option value="1">已收录！</option>
-            <option value="2">资源不符合要求！</option>
-            <option value="3">资源网址无法打开！</option>
-            <option value="4">资源重复！</option>
+            <option value="已收录！">已收录！</option>
+            <option value="资源不符合要求！">资源不符合要求！</option>
+            <option value="资源网址无法打开！">资源网址无法打开！</option>
+            <option value="资源重复！">资源重复！</option>
         </select>
     </div>
     </form>
