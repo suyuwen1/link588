@@ -19,7 +19,6 @@ SET time_zone = "+00:00";
 --
 -- 数据库: `urls`
 --
-CREATE DATABASE `urls` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `urls`;
 
 -- --------------------------------------------------------

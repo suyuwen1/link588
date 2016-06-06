@@ -71,10 +71,11 @@ function up(){
     var w_w = $(window).width();
     var up_r = (w_w - 1000)/2 - 100;
     var s_h;
+    $(".tool_up,.tool_sendurl").css({"right":up_r});
     $(window).scroll(function(){
         s_h = $(this).scrollTop();
         if(s_h > 200){
-            $(".tool_up").css({"right":up_r}).show('fast');
+            $(".tool_up").show('fast');
         }else{
             $(".tool_up").hide();
         }
@@ -99,12 +100,12 @@ function sendurl(){
         if(ajax) ajax.abort();
         ajax = $.ajax({
             type: "post",
-            url: "post.php",
+            url: "http://www.link588.com/templets/link588/tool/urls/post.php",
             data: {"url":url,"email":email},
             dataType: "json",
             beforeSend: function(){
                 infohide = false;
-                $(".info1").html('<img height="31" src="win10.gif">').show();
+                $(".info1").html('<img height="31" src="http://www.link588.com/templets/link588/tool/urls/win10.gif">').show();
             },
             success: function (dt) {
                 $(".info1").html('');
@@ -114,8 +115,14 @@ function sendurl(){
         });
     });
     
-    $(".sendurl_con_gb").click(function(){
-        
+    $(".sendurl_gb").click(function(){
+        $(".sendurl").hide();
+        $(".tool_sendurl").show();
+    });
+    
+    $(".tool_sendurl").click(function(){
+        $(".sendurl").show();
+        $(".tool_sendurl").hide();
     });
     
     $(".info1,.info2").click(function(){

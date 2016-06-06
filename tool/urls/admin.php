@@ -60,7 +60,7 @@
         }
         
         if ($_POST['tj'] == '拒绝') {
-            if ($_POST['jjc'] >1) {
+            if ($_POST['jjc'] != '已收录！') {
                 $jjc=$_POST['jjc'];
             }else{
                 $jjc=$_POST['jjc2'];
@@ -78,7 +78,7 @@
     }
     
     $a=array();
-    $sql = "SELECT id,url,email,ctime FROM `urls` WHERE `hf` = '0'";
+    $sql = "SELECT id,url,email,ctime FROM `urls` WHERE `hf` = '正在审核中...'";
     $result = mysqli_query($M->mysql,$sql);
     if($result && mysqli_num_rows($result)){
 	    while($row=mysqli_fetch_assoc($result)){
