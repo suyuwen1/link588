@@ -1,0 +1,130 @@
+.tool_up{
+    width: 44px;
+    position: fixed;
+    z-index: 900;
+    border: solid 1px #ccc;
+    padding: 5px;
+    right: 0px;
+    bottom: 150px;
+    display: none;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    background-color: #fff;
+}
+.tool_sendurl{
+    width: 44px;
+    color: #fff;
+    position: fixed;
+    z-index: 900;
+    border: solid 1px #ccc;
+    padding: 5px;
+    right: 0px;
+    bottom: 220px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    background-color: #186ab4;
+}
+.tool_sendurl:hover{
+    color: #87c80c;
+}
+.tool_up:hover{
+    background-color: #F3F3F3;
+}
+.sendurl{
+    position: fixed;
+    bottom: 0px;
+    background-color: #186ab4;
+    padding: 40px 0 20px 0;
+    width: 100%;
+    text-align: center;
+    display: none;
+    z-index: 1000;
+}
+.sendurl_con{
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+}
+.sendurl_con input{
+    border: none;
+    background-color: #F3F3F3;
+    padding: 5px;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.sendurl_con_url{
+    width: 100%;
+}
+.sendurl_con_email{
+    width: 100%;
+}
+.sendurl_con_tj{
+    padding: 5px 20px;
+    background-color: #186ab4;
+    border: solid 1px #fff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+.sendurl_con_tj:hover{
+    background-color: #87c80c;
+}
+.sendurl_gb:hover{
+    color: #87c80c;
+}
+.sendurl .info1{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 31px;
+    line-height: 31px;
+    background-color: #F3F3F3;
+    padding: 0 5px;
+    border-radius: 5px;
+}
+.sendurl .info1 img{
+    height: 31px;
+    vertical-align: middle;
+}
+.sendurl .info2{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 31px;
+    background-color: #F3F3F3;
+    padding: 0 5px;
+    border-radius: 5px;
+    line-height: 31px;
+}
+.sendurl_title{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #186ab4;
+    border-radius: 100px;
+    top: -30px;
+    color: #fff;
+    font-size: 18px;
+    padding-top: 16px;
+}
+.sendurl_gb{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #186ab4;
+    border-radius: 20px;
+    top: -15px;
+    color: #fff;
+    font-size: 18px;
+    right: 10px;
+    border: none;
+    cursor: pointer;
+    padding-top: 0px;
+}

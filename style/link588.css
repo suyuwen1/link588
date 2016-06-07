@@ -407,6 +407,7 @@ input,select,button{
 .tool_up{
     width: 40px;
     position: fixed;
+    z-index: 900px;
     border: solid 1px #ccc;
     padding: 5px;
     right: 0px;
@@ -432,6 +433,7 @@ input,select,button{
     -ms-user-select: none;
     -moz-user-select: none;
     background-color: #186ab4;
+    z-index: 900;
 }
 .tool_sendurl:hover{
     color: #87c80c;
@@ -446,6 +448,7 @@ input,select,button{
     padding: 20px 0;
     width: 100%;
     text-align: center;
+    z-index: 1000;
 }
 .sendurl_con{
     width: 1000px;
@@ -487,6 +490,9 @@ input,select,button{
     top: 0;
     height: 31px;
     line-height: 31px;
+}
+.sendurl .info1 img{
+    height: 31px;
 }
 .sendurl .info2{
     display: none;
