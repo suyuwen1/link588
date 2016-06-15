@@ -264,6 +264,8 @@ input,select,button{
     margin: 10px 30px;
     border-left: solid 3px lightgreen;
     padding: 5px 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 .link588_pages{
     padding: 10px;
