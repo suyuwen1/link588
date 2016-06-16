@@ -240,9 +240,15 @@ input,select,button{
     clear: both;
 }
 .viewcon .content{
-    margin: 10px 0;
+    margin: 20px 0 10px 0;
     word-break: break-all;
     word-wrap: break-word;
+}
+.viewcon .content a{
+    color: #186ab4;
+}
+.viewcon .content a:visited{
+    color: #eb6100;
 }
 .viewcon .art_gxq{
     padding: 10px 0;
