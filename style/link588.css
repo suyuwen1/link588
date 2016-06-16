@@ -267,11 +267,18 @@ input,select,button{
     color: #eb6100;
 }
 .content pre{
-    margin: 10px 30px;
+    margin: 15px 30px;
     border-left: solid 3px lightgreen;
     padding: 5px 10px;
     white-space: pre-wrap;
     word-wrap: break-word;
+}
+.content blockquote{
+    margin: 15px auto;
+    border: 1px solid #D6E9C6;
+    border-left-width: 3px;
+    padding: 5px 10px;
+    background-color: #F4FFEF;
 }
 .link588_pages{
     padding: 10px;
