@@ -247,7 +247,7 @@ input,select,button{
 .viewcon .content a{
     color: #186ab4;
 }
-.viewcon .content a:visited{
+.viewcon .content a:visited,.viewcon .content a:hover{
     color: #eb6100;
 }
 .viewcon .art_gxq{
@@ -263,7 +263,7 @@ input,select,button{
 .viewcon .art_gxq ul li a{
     color: #186ab4;
 }
-.viewcon .art_gxq ul li a:visited{
+.viewcon .art_gxq ul li a:visited,.viewcon .art_gxq ul li a:hover{
     color: #eb6100;
 }
 .content pre{
@@ -390,10 +390,14 @@ input,select,button{
 .content img{
     max-width: 100%;
     vertical-align: middle;
+    margin: 0;
 }
-.content p{
-    margin-bottom: 10px;
+.content *{
+    margin: 15px 0;
 }
+/*.content p{
+    padding: 10px 0;
+}*/
 .prenext{
     padding: 10px 0;
 }
