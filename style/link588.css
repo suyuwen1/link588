@@ -274,11 +274,28 @@ input,select,button{
     word-wrap: break-word;
 }
 .content blockquote{
-    margin: 15px 30px;
+    margin: 15px 0;
     border: 1px solid #D6E9C6;
     border-top-width: 3px;
     padding: 5px 10px;
     background-color: #F4FFEF;
+}
+.content table{
+    border-top: solid 1px #ddd;
+    border-left: solid 1px #ddd;
+    width: 100%;
+}
+.content table th{
+    border-bottom: solid 1px #ddd;
+    border-right: solid 1px #ddd;
+    padding: 5px 10px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+.content table td{
+    border-bottom: solid 1px #ddd;
+    border-right: solid 1px #ddd;
+    padding: 5px 10px;
 }
 .link588_pages{
     padding: 10px;
