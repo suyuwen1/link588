@@ -298,6 +298,15 @@ input,select,button{
     border-right: solid 1px #ddd;
     padding: 5px 10px;
 }
+.content ul,.content ol{
+    padding: 0 30px;
+}
+.content ol>li{
+    list-style: decimal inside;
+}
+.content ul>li{
+    list-style: disc inside;
+}
 .link588_pages{
     padding: 10px;
     text-align: center;
@@ -373,7 +382,8 @@ input,select,button{
     display: inline-block;
     float: left;
     width: 333px;
-    padding: 5px 0;
+    /*padding: 5px 0;*/
+    line-height: 28px;
     font-size: 14px;
     overflow: hidden;
     height: 28px;
