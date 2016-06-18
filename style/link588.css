@@ -284,6 +284,7 @@ input,select,button{
     border-top: solid 1px #ddd;
     border-left: solid 1px #ddd;
     width: 100%;
+    border-spacing: 0;
 }
 .content table th{
     border-bottom: solid 1px #ddd;
