@@ -3,6 +3,7 @@ $(function(){
     highlighter();
     up();
     sendurl();
+    click_up();
 });
 
 function toplisthover(){
@@ -66,21 +67,40 @@ function runEx(id) {
     TestWin.document.close();
 }
 //向上滚动代码
-function up(){
-    click_up();
-    var w_w = $(window).width();
-    var up_r = (w_w - 1000)/2 - 100;
-    var s_h;
-    $(".tool_up,.tool_sendurl").css({"right":up_r});
-    $(window).scroll(function(){
-        s_h = $(this).scrollTop();
-        if(s_h > 200){
-            $(".tool_up").show('fast');
-        }else{
-            $(".tool_up").hide();
-        }
-    });
+var w_w;
+function www(){
+    w_w = $(window).width();
+    if(w_w < 1000){
+        var u = 600;
+        var e = 280;
+        $(".sendurl_con_url").css({"width":(u/1000)*w_w});
+        $(".sendurl_con_email").css({"width":(e/1000)*w_w});
+    }else{
+        $(".sendurl_con_url").css({"width":600});
+        $(".sendurl_con_email").css({"width":280});
+    }
 }
+$(window).resize(function(){
+    up();
+});
+function up(){
+    
+    www();
+    var up_r = (w_w - 1000)/2 - 100;
+    up_r = (up_r>0)?up_r:10;
+    
+    $(".tool_up,.tool_sendurl").css({"right":up_r});
+    
+}
+var s_h;
+$(window).scroll(function(){
+    s_h = $(this).scrollTop();
+    if(s_h > 200){
+        $(".tool_up").show();
+    }else{
+        $(".tool_up").hide();
+    }
+});
 //点击up
 function click_up(){
     $(".tool_up").click(function(){

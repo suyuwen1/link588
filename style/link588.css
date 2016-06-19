@@ -482,6 +482,10 @@ input,select,button{
     background-color: #186ab4;
     z-index: 900;
 }
+.tool_qq{
+    padding-bottom: 20px;
+    text-align: center;
+}
 .tool_sendurl:hover{
     color: #87c80c;
 }
@@ -490,7 +494,7 @@ input,select,button{
 }
 .sendurl{
     position: fixed;
-    bottom: 0px;
+    bottom: -1px;
     background-color: #186ab4;
     padding: 20px 0;
     width: 100%;
@@ -502,6 +506,7 @@ input,select,button{
     margin: 0 auto;
     text-align: left;
     position: relative;
+    padding: 0 2px;
 }
 .sendurl_con input{
     border: none;
