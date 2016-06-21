@@ -137,16 +137,16 @@ input,select,button{
 .con .conleft{
     display: inline-block;
     width: 326px;
-    float: left;
+    /*float: left;*/
     margin-right: 10px;
     margin-bottom: 10px;
-    border: solid 1px rgba(136, 160, 183, 0.5);
+    border: solid 1px #b6c8d8;
 }
 .con .conleft .contitle{
-    background-color: rgba(140, 186, 226, 0.09);
+    background-color: #f5faff;
     color: #10326b;
     padding: 6px 5px;
-    border-bottom: solid 1px rgba(136, 160, 183, 0.5);
+    border-bottom: solid 1px #b6c8d8;
 }
 .con .conleft .conlist{
     padding: 0 5px;
@@ -237,7 +237,7 @@ input,select,button{
 .viewcon .intro{
     border-left: solid 3px #186ab4;
     padding: 10px;
-    background-color: rgba(140, 186, 226, 0.09);
+    background-color: #f5faff;
     margin-bottom: 10px;
     color: #333;
 }
@@ -344,12 +344,12 @@ input,select,button{
 }
 .listbox ul li{
     display: inline-block;
-    float: left;
+    /*float: left;*/
     margin: 10px 10px 0 0;
 }
 .listbox ul li a{
     padding: 5px 10px;
-    background-color: rgba(140, 186, 226, 0.3);
+    background-color: #c5e1ff;
     text-decoration: none;
     color: #333;
     display: block;
@@ -388,7 +388,7 @@ input,select,button{
 }
 .articlelist .onebox .oneboxl ul li{
     display: inline-block;
-    float: left;
+    /*float: left;*/
     width: 333px;
     /*padding: 5px 0;*/
     line-height: 28px;
