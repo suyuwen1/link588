@@ -73,11 +73,11 @@ function www(){
     if(w_w < 1000){
         var u = 600;
         var e = 280;
-        $(".sendurl_con_url").css({"width":(u/1000)*w_w});
-        $(".sendurl_con_email").css({"width":(e/1000)*w_w});
+        $(".sendurl_con1").css({"width":(u/1000)*w_w});
+        $(".sendurl_con2").css({"width":(e/1000)*w_w});
     }else{
-        $(".sendurl_con_url").css({"width":600});
-        $(".sendurl_con_email").css({"width":280});
+        $(".sendurl_con1").css({"width":600});
+        $(".sendurl_con2").css({"width":280});
     }
 }
 $(window).resize(function(){

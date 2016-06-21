@@ -7,6 +7,10 @@
 	box-sizing: border-box;
     list-style: none;
 }
+button::-moz-focus-inner{
+    border: 0;
+    padding: 0;
+}
 body{
 	font:14px Microsoft YaHei,微软雅黑,sans-serif,Verdana,Arial,Tahoma;
     overflow: auto;
@@ -33,8 +37,9 @@ input,select,button{
 .header .top{
     width: 1000px;
     margin: 20px auto;
+    height: 64px;
 }
-.header .top::after, .navMenu::after, .header .search::after, .module .search .tags::after, #main .con::after, .listbox::after, .oneboxt::after, .oneboxl::after, .pagelist::after, .linkbox .f6::after{
+.header .top::after, .navMenu::after, .header .search::after, .module .search .tags::after, #main .con::after, .listbox::after, .oneboxt::after, .oneboxl::after, .pagelist::after, .linkbox .f6::after, .sendurl_con::after{
     content: '';
     visibility: hidden;
     clear: both;
@@ -55,7 +60,7 @@ input,select,button{
 .module{
     height: 40px;
     background-color: #186ab4;
-    /*text-align: left;*/
+    clear: both;
 }
 .navMenu{
     width: 1000px;
@@ -86,6 +91,7 @@ input,select,button{
     width: 1000px;
     margin: 0 auto;
     padding: 10px 0;
+    height: 52px;
 }
 .header .search .tags{
     float: left;
@@ -110,6 +116,7 @@ input,select,button{
     line-height: 30px;
     padding: 0 10px;
     width: 260px;
+    height: 32px;
 }
 .search .search-submit{
     background-color: #186ab4;
@@ -357,6 +364,7 @@ input,select,button{
 .articlelist .onebox .oneboxt{
     border-bottom: solid 1px #186ab4;
     padding: 5px 10px;
+    height: 30px;
 }
 .articlelist .onebox .oneboxtl{
     font-size: 14px;
@@ -513,14 +521,15 @@ input,select,button{
     background-color: #F3F3F3;
     padding: 5px;
     font-size: 18px;
-    margin-right: 20px;
+    width: 100%;
+    /*margin-right: 20px;*/
 }
-.sendurl_con_url{
+/*.sendurl_con_url{
     width: 600px;
 }
 .sendurl_con_email{
     width: 280px;
-}
+}*/
 .sendurl_con_tj{
     padding: 5px 20px;
     background-color: #186ab4;
@@ -538,7 +547,7 @@ input,select,button{
 .sendurl .info1{
     display: none;
     position: absolute;
-    right: 405px;
+    right: 0;
     top: 0;
     height: 31px;
     line-height: 31px;
@@ -549,7 +558,7 @@ input,select,button{
 .sendurl .info2{
     display: none;
     position: absolute;
-    right: 105px;
+    right: 0;
     top: 0;
     height: 31px;
     line-height: 31px;
@@ -578,4 +587,18 @@ input,select,button{
     border: none;
     cursor: pointer;
     padding-top: 2px;
+}
+.sendurl_con1{
+    position: relative;
+    display: inline-block;
+    float: left;
+    width: 600px;
+    margin-right: 20px;
+}
+.sendurl_con2{
+    position: relative;
+    display: inline-block;
+    float: left;
+    width: 280px;
+    margin-right: 20px;
 }
