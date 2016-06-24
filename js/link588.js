@@ -53,6 +53,7 @@ function highlighter(){
         'scala                  $shBrushScala.js',
         'sql                    $shBrushSql.js',
         'vb vbnet               $shBrushVb.js',
+        'ps powershell          $shBrushPowerShell.js',
         'xml xhtml xslt html    $shBrushXml.js'
         ));
         SyntaxHighlighter.all();
