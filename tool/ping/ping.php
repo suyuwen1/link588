@@ -43,14 +43,14 @@
                 $sql = "UPDATE `ping` SET `last_id` = (SELECT id FROM `dede_archives` ORDER BY id DESC limit 1)";
                 $result2 = mysqli_query($M->mysql,$sql);
                 if($result2 && mysqli_affected_rows($M->mysql)>0){
-                    $urls['ping'] = '最后更新ID已更新！';
+                    $result['ping'] = '最后更新ID已更新！';
                 }else{
-                    $urls['ping'] = '最后更新ID更新失败！';                    
+                    $result['ping'] = '最后更新ID更新失败！';                    
                 }
             }
         }
         
-        $urls['total'] = count($urls);
-        echo json_encode(array_merge($urls,$result));
+        $result['total'] = count($urls);
+        echo json_encode($result);
     }
 ?>
