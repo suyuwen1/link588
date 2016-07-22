@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>百度ping</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        var b_ajax;
+        $(function(){
+            $(".tj").click(function(){
+                var id = $(this).attr('id');
+                var start, end;
+                if(id == 'bt'){
+                    start = $("#start").val().trim();
+                    end = $("#end").val().trim();
+                    if(start == '' || end == ''){
+                        alert('开始与结束不能为空！');
+                        return false;
+                    }
+                }
+
+                if(b_ajax){
+	                b_ajax.abort();
+	            }
+            
+	            b_ajax=$.ajax({
+                        url: 'post.php',
+                        type: 'post',
+                        data: {"id":id,"start":start,"end":end},
+                        //async: false,
+                        cache: false,
+                        beforeSend: function(){
+                            $("#load").html('<img src="win10.gif">');
+                        },
+                        success: function(d){
+                            if(d.ping){
+                                $("#load").html(d.ping);
+                            }else{
+                                $("#load").html('');
+                            }
+                            
+                            if(d.success){
+                                $("#to").html(d.total);
+                                $("#su").html(d.success);
+                                $("#re").html(d.remain);
+                                $("#not").html(d.not_same_site);
+                                $("#not2").html(d.not_valid);
+                            }else{
+                                $("#er").html(d.error+'：'+d.message);
+                            }
+                        }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+   <div style="padding:20px;">
+       <span style="margin:20px;"><a class="tj" id="all" href="javascript:void(0);">全部提交</a></span>
+       <span style="margin:20px;"><a class="tj" id="add" href="javascript:void(0);">增量提交</a></span>
+       <span style="margin:20px;"><a class="tj" id="bt" href="javascript:void(0);">部分提交</a>
+          开始：<input id="start" type="text"> 结束：<input id="end" type="text">
+       </span>
+   </div>
+   <div style="padding:20px;">
+        <div>共计：<span id="to"></span></div>
+        <div style="color:green;">成功：<span id="su"></span></div>
+        <div style="color:red;">失败：<span id="er"></span></div>
+        <div>剩余：<span id="re"></span></div>
+        <div style="color:red;">不是本站url而未处理的url列表：<span id="not"></span></div>
+        <div style="color:red;">不合法的url列表：<span id="not2"></span></div>
+        <div id="load"></div>
+   </div>
+</body>
+</html>
