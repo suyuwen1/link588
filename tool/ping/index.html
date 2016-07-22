@@ -24,13 +24,18 @@
 	            }
             
 	            b_ajax=$.ajax({
-                        url: 'post.php',
+                        url: 'ping.php',
                         type: 'post',
+                        dataType: 'json',
                         data: {"id":id,"start":start,"end":end},
-                        //async: false,
-                        cache: false,
                         beforeSend: function(){
                             $("#load").html('<img src="win10.gif">');
+                            $("#to").html('');
+                            $("#su").html('');
+                            $("#re").html('');
+                            $("#not").html('');
+                            $("#not2").html('');
+                            $("#er").html('');
                         },
                         success: function(d){
                             if(d.ping){

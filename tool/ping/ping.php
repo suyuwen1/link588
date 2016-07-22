@@ -14,7 +14,7 @@
     }
 
     if($_POST['id'] == 'bt'){
-        $sql = "SELECT dede_archives.id, dede_archives.title,  dede_arctype.namerule FROM `dede_archives`,`dede_arctype` WHERE dede_archives.id between $_POST['start'] and $_POST['end'] and dede_archives.typeid = dede_arctype.id and dede_archives.ismake = 1   ORDER BY  `dede_archives`.`id` ASC";
+        $sql = "SELECT dede_archives.id, dede_archives.title,  dede_arctype.namerule FROM `dede_archives`,`dede_arctype` WHERE dede_archives.id between {$_POST['start']} and {$_POST['end']} and dede_archives.typeid = dede_arctype.id and dede_archives.ismake = 1  ORDER BY  `dede_archives`.`id` ASC";
     }
 
     $urls = array();
@@ -36,7 +36,8 @@
         );
         curl_setopt_array($ch, $options);
         $result = curl_exec($ch);
-        $result = json_decode($result);
+        curl_close($ch);
+        $result = json_decode($result,true);
         if($result['success']){
             if($_POST['id'] == 'add' || $_POST['id'] == 'all'){
                 $sql = "UPDATE `ping` SET `last_id` = (SELECT id FROM `dede_archives` ORDER BY id DESC limit 1)";
