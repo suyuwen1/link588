@@ -44,14 +44,19 @@
                                 $("#load").html('');
                             }
                             
-                            if(d.success){
+                            if(typeof(d.success) != 'undefined'){
                                 $("#to").html(d.total);
                                 $("#su").html(d.success);
                                 $("#re").html(d.remain);
-                                $("#not").html(d.not_same_site);
-                                $("#not2").html(d.not_valid);
-                            }else{
-                                $("#er").html(d.error+'：'+d.message);
+                                // $("#not").html(d.not_same_site);
+                                // $("#not2").html(d.not_valid);
+                            }else{                                
+                                $("#er").html(d.error);
+                                for(var i in d.error.url){
+                                    for(var ii in i){
+                                        $("#load").html('').append(ii+'</br>');
+                                    }
+                                }
                             }
                         }
                 });
