@@ -68,7 +68,7 @@ echo json_encode($back);
 
 function baidu_ping($urls='')
 {
-    global $back, $result2;
+    global $back, $result2, $M;
     $api = 'http://data.zz.baidu.com/urls?site=www.link588.com&token=cjec0HNMvsZfppqp';
         $ch = curl_init();
         $options =  array(
